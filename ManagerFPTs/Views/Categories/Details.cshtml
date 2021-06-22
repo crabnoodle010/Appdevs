@@ -1,0 +1,23 @@
+﻿@model ManagerFPTs.Models.Category
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detail Of Category Course</h2>
+
+<div class="form-group">
+    @Html.ActionLink(
+        "Back to Index page",
+        "Index",
+        "Categories",
+        null,
+        new { @class = "btn btn-primary" })
+</div>
+<div class="panel panel-info">
+
+    <div class="panel-body">
+        <p>Category: @Model.Name</p>
+    </div>
+    <div class="panel-heading">Description: @Model.Description </div>
+</div>
+

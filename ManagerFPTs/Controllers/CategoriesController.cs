@@ -20,7 +20,7 @@ namespace ManagerFPTs.Controllers
             var categories = _context.Categories.ToList();
             return View(categories);
         }
-        public ActionResult Detail(int id)
+        public ActionResult Details(int id)
         {
             var category = _context.Categories.SingleOrDefault(t => t.Id == id);
             if (category == null) return HttpNotFound();
