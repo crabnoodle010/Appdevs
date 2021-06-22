@@ -1,16 +1,16 @@
-﻿@model ManagerFPTs.Models.Category
+﻿@model ManagerFPTs.Models.Course
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Create";
 }
 
-<h2>Update a Category Course</h2>
+<h2>Create Course</h2>
 
-@using (Html.BeginForm("Edit", "Categories", FormMethod.Post))
+@using (Html.BeginForm("Create", "Courses", FormMethod.Post))
 {
     @Html.ValidationSummary(false, "", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Name)
-        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Enter Category Name" })
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Enter Courses Name" })
         @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
@@ -19,7 +19,7 @@
         @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 }
 
