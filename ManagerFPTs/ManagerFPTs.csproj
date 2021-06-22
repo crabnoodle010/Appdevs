@@ -182,11 +182,17 @@
     <Compile Include="Migrations\202106221152310_AddUserIfTable.Designer.cs">
       <DependentUpon>202106221152310_AddUserIfTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106221210304_AddDepartmentTable.cs" />
+    <Compile Include="Migrations\202106221210304_AddDepartmentTable.Designer.cs">
+      <DependentUpon>202106221210304_AddDepartmentTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\TraineeIf.cs" />
     <Compile Include="Models\TrainerIf.cs" />
     <Compile Include="Models\UserIf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -272,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106221152310_AddUserIfTable.resx">
       <DependentUpon>202106221152310_AddUserIfTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106221210304_AddDepartmentTable.resx">
+      <DependentUpon>202106221210304_AddDepartmentTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
