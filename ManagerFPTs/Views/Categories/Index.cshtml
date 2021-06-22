@@ -37,6 +37,12 @@
                                      "Categories",
                                      new { id = category.Id },
                                      new { @class = "btn btn-default" })
+                    @Html.ActionLink(
+                                     "Delete",
+                                     "Delete",
+                                     "Categories",
+                                     new { id = category.Id },
+                                     new { @class = "btn btn-danger" })
 
 
                 </td>
