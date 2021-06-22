@@ -203,6 +203,10 @@
     <Compile Include="Migrations\202106221400437_UpdateUserTable.Designer.cs">
       <DependentUpon>202106221400437_UpdateUserTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106221950082_TestUpdate.cs" />
+    <Compile Include="Migrations\202106221950082_TestUpdate.Designer.cs">
+      <DependentUpon>202106221950082_TestUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -318,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106221400437_UpdateUserTable.resx">
       <DependentUpon>202106221400437_UpdateUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106221950082_TestUpdate.resx">
+      <DependentUpon>202106221950082_TestUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManagerFPTs.UniqueAttribute;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,8 +9,11 @@ namespace ManagerFPTs.Models
 {
     public class Department
     {
+        [Key]
         public int Id { get; set; }
+        [Required]
         [Display(Name = "Department")]
+        [Unique]
         public string Name { get; set; }
     }
 }

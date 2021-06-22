@@ -168,6 +168,7 @@ namespace ManagerFPTs.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    UserManager.AddToRole(user.Id, "trainee");
                     var Userif = new UserIf
                     {
                         FullName = model.Userif.FullName,
