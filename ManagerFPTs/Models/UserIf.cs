@@ -18,6 +18,8 @@ namespace ManagerFPTs.Models
         [DisplayName("Full name")]
         public string FullName { get; set; }
         [Required]
+        public int Age { get; set; }
+        [Required]
         public string Address { get; set; }
         [Required]
         [DisplayName("Date Of Birth")]

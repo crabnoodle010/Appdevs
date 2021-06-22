@@ -17,17 +17,30 @@ namespace ManagerFPTs.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext _context;
 
         public AccountController()
         {
+            _context = new ApplicationDbContext();
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, ApplicationDbContext context)
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            Context = context;
         }
-
+        public ApplicationDbContext Context
+        {
+            get
+            {
+                return _context ?? new ApplicationDbContext();
+            }
+            private set
+            {
+                _context = value;
+            }
+        }
         public ApplicationSignInManager SignInManager
         {
             get
@@ -155,6 +168,18 @@ namespace ManagerFPTs.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    var Userif = new UserIf
+                    {
+                        FullName = model.Userif.FullName,
+                        UserId = user.Id,
+                        Address = model.Userif.Address,
+                        Age = model.Userif.Age,
+                        DateOfBirth = model.Userif.DateOfBirth,
+                        NumberPhone = model.Userif.NumberPhone,
+                    };
+                    _context.UserIfs.Add(Userif);
+                    _context.SaveChanges();
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

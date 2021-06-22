@@ -49,6 +49,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.8\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -196,6 +199,10 @@
     <Compile Include="Migrations\202106221255361_Update.Designer.cs">
       <DependentUpon>202106221255361_Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106221400437_UpdateUserTable.cs" />
+    <Compile Include="Migrations\202106221400437_UpdateUserTable.Designer.cs">
+      <DependentUpon>202106221400437_UpdateUserTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -208,6 +215,7 @@
     <Compile Include="Models\UserIf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="UniqueAttribute\Unique.cs" />
     <Compile Include="ViewModels\CourseCategoryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106221255361_Update.resx">
       <DependentUpon>202106221255361_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106221400437_UpdateUserTable.resx">
+      <DependentUpon>202106221400437_UpdateUserTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
