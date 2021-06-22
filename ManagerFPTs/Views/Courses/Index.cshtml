@@ -9,12 +9,21 @@
     @Html.ActionLink("New Course", "Create", "Courses", null, new { @class = "btn btn-primary" })
 </div>
 
+@using (Html.BeginForm("Index", "Courses", FormMethod.Get))
+{
+    <div class="form-group">
+        @Html.TextBox("searchString", null, new { placeholder = "Search by Description ...", required = "required" })
+        <button type="submit"><i class="">Search</i></button>
+    </div>
+}
+
 <table class="table table-bordered">
     <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Course</th>
             <th scope="col">Description</th>
+            <th scope="col">Category</th>
         </tr>
     </thead>
     <tbody>
@@ -24,13 +33,14 @@
                 <td>@course.Id</td>
                 <td>@course.Name</td>
                 <td>@course.Description</td>
+                <td>@course.Category.Name</td>
                 <td>
                     @Html.ActionLink(
-                        "Details",
-                        "Details",
-                        "Categories",
-                        new { id = course.Id },
-                        new { @class = "btn btn-primary" })
+                                    "Details",
+                                    "Details",
+                                    "Categories",
+                                    new { id = course.Id },
+                                    new { @class = "btn btn-primary" })
                     @Html.ActionLink(
                                      "Edit",
                                      "Edit",

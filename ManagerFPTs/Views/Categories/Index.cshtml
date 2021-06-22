@@ -9,6 +9,15 @@
     @Html.ActionLink("New Category Course", "Create", "Categories", null, new { @class = "btn btn-primary" })
 </div>
 
+@using (Html.BeginForm("Index", "Categories", FormMethod.Get))
+{
+    <div class="form-group">
+        @Html.TextBox("searchString", null, new { placeholder = "Search by Description ...", required = "required" })
+        <button type="submit"><i class="">Search</i></button>
+    </div>
+}
+
+
 <table class="table table-bordered">
     <thead>
         <tr>
