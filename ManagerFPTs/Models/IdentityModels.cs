@@ -25,6 +25,7 @@ namespace ManagerFPTs.Models
         {
         }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<UserIf> UserIfs { get; set; }
 
         public static ApplicationDbContext Create()
         {
