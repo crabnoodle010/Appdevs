@@ -10,6 +10,7 @@ using ManagerFPTs.ViewModels;
 
 namespace ManagerFPTs.Controllers
 {
+    [Authorize]
     public class CoursesController : Controller
     {
         private ApplicationDbContext _context;

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace ManagerFPTs.Controllers
 {
+    [Authorize]
     public class CategoriesController : Controller
     {
         private ApplicationDbContext _context;

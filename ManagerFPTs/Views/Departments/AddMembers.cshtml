@@ -1,0 +1,19 @@
+﻿@model ManagerFPTs.ViewModels.DepartmentTraineeViewModel
+@{
+    ViewBag.Title = "AddMembers";
+}
+
+<h2>Add Trainee To Department</h2>
+
+@using (Html.BeginForm("AddMembers", "Departments", FormMethod.Post))
+{
+<div class="form-group">
+    Trainee Name:
+    @Html.HiddenFor(m => m.DepartmentId)
+    @Html.DropDownListFor(m => m.UserId,
+        new SelectList(Model.Users, "Id", "Username"),new { @class = "form-control" })
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Add Trainee</button>
+    </div>
+</div>
+}

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ManagerFPTs.Models.Department>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Department List</h2>
+
+<div class="form-group">
+    @Html.ActionLink(
+             "New Department",
+             "Create",
+             "Departments",
+             null,
+             new { @class = "btn btn-primary" }
+             )
+</div>
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item active">Department: @item.Name</li>
+                <li class="list-group-item">
+
+                    @Html.ActionLink("Details",
+                                    "Details",
+                                    "Categories",
+                                    new { id = item.Id },
+                                    new { @class = "btn btn-primary" }
+                                    )
+                    @Html.ActionLink("Delete",
+                                    "Delete",
+                                    "Categories",
+                                    new { id = item.Id },
+                                    new { @class = "btn btn-danger" }
+                                    )
+                    @Html.ActionLink("Edit",
+                                    "Edit",
+                                    "Todoes",
+                                    new { id = item.Id },
+                                    new { @class = "btn btn-default" }
+                                    )
+                </li>
+                <li class="list-group-item">
+                    @Html.ActionLink(
+                                 "Trainee",
+                                 "Members",
+                                 "Departments",
+                                 new { id = item.Id },
+                                 new { @class = "btn btn-success" }
+                                 )
+                    @Html.ActionLink(
+                                 "Add Trainee",
+                                 "AddMembers",
+                                 "Departments",
+                                 new { id = item.Id },
+                                 new { @class = "btn btn-primary" }
+                                 )
+
+                </li>
+
+            </ul>
+        </div>
+    }
+</div>
