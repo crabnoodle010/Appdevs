@@ -13,7 +13,7 @@ namespace ManagerFPTs.Models
         public int Id { get; set; }
         [Required]
         [Display(Name = "Department")]
-        [Unique]
+        [Unique(ErrorMessage = "Department Name already exist !!")]
         public string Name { get; set; }
     }
 }

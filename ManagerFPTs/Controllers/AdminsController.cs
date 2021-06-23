@@ -8,18 +8,24 @@ using System.Web.Mvc;
 
 namespace ManagerFPTs.Controllers
 {
-    public class TrainerIfsController : Controller
+    [Authorize(Roles = "admin")]
+    public class AdminsController : Controller
     {
         private ApplicationDbContext _context;
-        public TrainerIfsController()
+        public AdminsController()
         {
             _context = new ApplicationDbContext();
         }
-        // GET: TrainerIfs
+        // GET: Admins
         public ActionResult Index()
         {
-            var trainerIfs = _context.UserIfs.OfType<TrainerIf>().ToList();
-            return View(trainerIfs);
+            var adminId = User.Identity.GetUserId();
+            var adminIf = _context.UserIfs.OfType<Admin>().SingleOrDefault(a => a.UserId.Equals(adminId));
+
+            if (adminIf == null) return HttpNotFound();
+
+
+            return View(adminIf);
         }
     }
 }

@@ -171,11 +171,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\TrainerIfsController.cs" />
+    <Compile Include="Controllers\UserIfsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -207,11 +208,17 @@
     <Compile Include="Migrations\202106221950082_TestUpdate.Designer.cs">
       <DependentUpon>202106221950082_TestUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106230542489_AddDepartmentTrainee.cs" />
+    <Compile Include="Migrations\202106230542489_AddDepartmentTrainee.Designer.cs">
+      <DependentUpon>202106230542489_AddDepartmentTrainee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\DepartmentTrainee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\TraineeIf.cs" />
@@ -286,10 +293,11 @@
     <Content Include="Views\Courses\Create.cshtml" />
     <Content Include="Views\Courses\Edit.cshtml" />
     <Content Include="Views\Courses\Details.cshtml" />
+    <Content Include="Views\Admins\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\TrainerIfs\" />
+    <Folder Include="Views\UserIfs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -325,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106221950082_TestUpdate.resx">
       <DependentUpon>202106221950082_TestUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106230542489_AddDepartmentTrainee.resx">
+      <DependentUpon>202106230542489_AddDepartmentTrainee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
